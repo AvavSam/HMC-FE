@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 2</title>
+</head>
+
+<body>
+  <script>
+    //Buat program yang meminta user memasukkan umur (menggunakan prompt). Jika umur di atas 18, tampilkan pesan "Anda dewasa", jika tidak, tampilkan pesan "Anda belum dewasa".
+    const umur = prompt("Masukkan umur Anda:");
+
+    if (umur > 18) {
+      alert("Anda dewasa");
+    } else {
+      alert("Anda belum dewasa");
+    }
+
+    //Tulis sebuah program yang mencetak angka dari 1 hingga 100, tetapi untuk angka kelipatan 3 cetak "Fizz", untuk angka kelipatan 5 cetak "Buzz", dan untuk angka kelipatan 3 dan 5 cetak "FizzBuzz".
+    for (let i = 1; i <= 100; i++) {
+      if (i % 3 === 0 && i % 5 === 0) {
+        console.log("FizzBuzz");
+      } else if (i % 3 === 0) {
+        console.log("Fizz");
+      } else if (i % 5 === 0) {
+        console.log("Buzz");
+      } else {
+        console.log(i);
+      }
+    }
+
+    //Buat fungsi untuk menghitung potongan harga diskon, jadi parameter pertama akan menerima harganya dan parameter kedua akan menerima persentasi diskon
+    function hitungDiskon(harga, diskonPersen) {
+      const potongan = harga * (diskonPersen / 100);
+      const hargaSetelahDiskon = harga - potongan;
+      return hargaSetelahDiskon;
+    }
+
+    const hargaAwal = 100000;
+    const diskon = 20;
+    const hargaFinal = hitungDiskon(hargaAwal, diskon);
+    console.log(`Harga setelah diskon: Rp${hargaFinal}`);
+  </script>
+</body>
+
+</html>
