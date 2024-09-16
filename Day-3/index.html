@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 3</title>
+</head>
+<div id="car-container"></div>
+
+<body>
+  <script>
+    const cars = [
+      {
+        no_plat: "DN 1234 XYZ",
+        nama: "Avanza",
+        brand: "Toyota",
+        warna: ["Putih", "Hitam"],
+        bahan_bakar: ["Bensin", "Solar"],
+        maksimal_penumpang: 7
+      },
+      {
+        no_plat: "DN 5678 ABC",
+        nama: "Civic",
+        brand: "Honda",
+        warna: ["Merah"],
+        bahan_bakar: ["Bensin"],
+        maksimal_penumpang: 5
+      },
+      {
+        no_plat: "DN 9101 DEF",
+        nama: "Xpander",
+        brand: "Mitsubishi",
+        warna: ["Kuning", "Hijau", "Merah"],
+        bahan_bakar: ["Bensin"],
+        maksimal_penumpang: 7
+      },
+      {
+        no_plat: "DN 2345 GHI",
+        nama: "Fortuner",
+        brand: "Toyota",
+        warna: ["Hitam"],
+        bahan_bakar: ["Solar"],
+        maksimal_penumpang: 7
+      },
+      {
+        no_plat: "DN 6789 JKL",
+        nama: "Tiguan",
+        brand: "Volkswagen",
+        warna: ["Biru", "Silver"],
+        bahan_bakar: ["Diesel", "Bensin"],
+        maksimal_penumpang: 5
+      }
+    ];
+
+    function formatArray(array) {
+      if (array.length === 2) {
+        return array.join(" & ");
+      } else {
+        return array.join(", ");
+      }
+    }
+
+    cars.forEach((car, index) => {
+      console.log(`Mobil ${index + 1}:`);
+      console.log(`No Plat: ${car.no_plat}`);
+      console.log(`Nama: ${car.nama}`);
+      console.log(`Brand: ${car.brand}`);
+      console.log(`Warna: ${formatArray(car.warna)}`);
+      console.log(`Bahan Bakar: ${formatArray(car.bahan_bakar)}`);
+      console.log(`Maksimal Penumpang: ${car.maksimal_penumpang}`);
+      console.log("-------------------------");
+    });
+
+    const carContainer = document.getElementById('car-container');
+
+    cars.forEach((car, index) => {
+      const carDiv = document.createElement('div');
+      carDiv.innerHTML = `
+    <h2>Mobil ${index + 1}</h2>
+    <p>No Plat: ${car.no_plat}</p>
+    <p>Nama: ${car.nama}</p>
+    <p>Brand: ${car.brand}</p>
+    <p>Warna: ${formatArray(car.warna)}</p>
+    <p>Bahan Bakar: ${formatArray(car.bahan_bakar)}</p>
+    <p>Maksimal Penumpang: ${car.maksimal_penumpang}</p>
+    <hr>
+  `;
+      carContainer.appendChild(carDiv);
+    });
+  </script>
+</body>
+
+</html>
